@@ -19,6 +19,7 @@ builder.Services.AddApplicationService(builder.Configuration);
 
 builder.Services.EntityServiceExtension(builder.Configuration);
 
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 

@@ -37,8 +37,8 @@ namespace API.Controllers
         {
            var thing  = _context.Users.Find(-1);
 
-                var thingToString = thing.ToString();
-                return thingToString;
+            var thingToString = thing.ToString();
+            return thingToString;
         }
 
         [HttpGet("bad-request")]
