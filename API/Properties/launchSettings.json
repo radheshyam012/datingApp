@@ -1,5 +1,6 @@
 ﻿{
   "$schema": "https://json.schemastore.org/launchsettings.json",
+  
  
   "profiles": {
     "API": {
@@ -13,6 +14,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
+   
     
   }
 }

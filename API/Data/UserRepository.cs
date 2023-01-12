@@ -49,14 +49,29 @@ namespace API.Data
             return await _context.Users.Include(p=>p.Photos).ToListAsync();
         }
 
-        public async Task<bool> SaveAllAsync()
-        {
-            return await _context.SaveChangesAsync()>0;
-        }
+        // public async Task<bool> SaveAllAsync()
+        // {
+        //     return await _context.SaveChangesAsync()>0;
+        // }
 
         public void Update(AppUser user)
         {
             _context.Entry(user).State = EntityState.Modified;
         }
+
+        public async Task<AppUser> DeleteAyncs(int id)
+        {
+            var user = await _context.Users.FindAsync(id);
+             _context.Users.Remove(user);
+             await _context.SaveChangesAsync() ;
+             return user;
+        }
+
+        public async Task<string> GetGenderAsync(string username)
+        {
+           return await _context.Users.Where(x=>x.UserName == username)
+           .Select(x=>x.Gender).FirstOrDefaultAsync();
+        }
     }
+    
 }

@@ -22,10 +22,11 @@ namespace API.Extensions
             });
 
             services.AddScoped<ITokenServices,TokenService>(); 
-            services.AddScoped<IUserRepository,UserRepository>();
+            services.AddScoped<IUnitOfWork,UnitOfWork>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); 
             services.Configure<CloudinarySetting>(configuration.GetSection("CloudinarySettings"));
             services.AddScoped<IPhotoService,PhotoService>();
+            
 
             return services;
         }
